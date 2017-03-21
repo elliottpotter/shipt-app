@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   get   'categories/new'
   post  'categories/create'
 
-  get   'customers/new'
   post  'customers/create'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
