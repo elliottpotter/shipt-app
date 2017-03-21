@@ -18,7 +18,8 @@ In order to interact with shipt-app, you must first create your customer account
 * email
 
 
-### Create an order: **POST** /orders/create
+### Create an order:
+`**POST** /orders/create`
 Now that you're a paying customer, you can start creating orders! To so post your api_key to this endpoint. Your response will contain your **order_id** and an array of available products. Keep both of these as a reference for adding products to your order.
 
 **Body parameters:**
