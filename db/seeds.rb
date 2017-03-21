@@ -6,15 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-categories = [ "Produce", "Flowers", "Meats", "Medicine", "Candy", "Snacks", "Drinks", "Bread" ]
+categories    = [ "Produce", "Flowers", "Meats", "Medicine", "Candy", "Snacks", "Drinks", "Bread" ]
+units         = [ "each", "pounds", "ounces" ]
+t1            = Time.parse("2017-01-01 00:00:00")
+t2            = Time.parse("2017-03-21 00:00:00")
+
 categories.each { |category| Category.create(name: category) }
-t1 = Time.parse("2017-01-01 00:00:00")
-t2 = Time.parse("2017-03-21 00:00:00")
 
 20.times do
   Product.create(
     name:         Faker::Commerce.product_name.split[2], # one-word product name
-    category:     Category.order("RANDOM()").first       # random category
+    category:     Category.order("RANDOM()").first,      # random category
+    unit:         units.sample
   )
   Customer.create(
     first_name:   Faker::Internet.user_name,
