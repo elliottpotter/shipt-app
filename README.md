@@ -7,6 +7,8 @@ To get started, clone this repo locally and run the following commands from the 
 * rails db:create
 * rails db:migrate
 * rails db:seed
+* rails s
+Open up your favorite HTTP request-er, I prefer Postman myself, and start appending some endpoints to your rails server's host address!
 
 ## Endpoints and behavior
 ### Create an account:
