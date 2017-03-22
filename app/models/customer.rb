@@ -1,5 +1,6 @@
 class Customer < ApplicationRecord
   has_many :orders
+  has_many :products, through: :orders  
 
   before_create :generate_api_key
 

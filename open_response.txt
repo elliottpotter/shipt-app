@@ -1,0 +1,24 @@
+We want to give customers the ability to create lists of products for one-click ordering of bulk items.
+How would you design the tables, what are the pros and cons of your approach?
+
+- I would create a lists table that `belongs_to` a customer, and `has_many` order_products. The table would be
+populated by order_products each containing a product_id and quantity, and could be referenced later to
+create a new order with all of the contained order_products.
+
+- The pros of this approach are the reusability of the structure, and the extensive use of existing functionality.
+- The con of this approach is the introduction of a new table and additional load on order creation performance.
+
+
+
+If Shipt knew exact inventory of stores, and when facing a high traffic and limited supply of particular
+item, how do you distribute the inventory among customers checking out?
+
+- I would approach this problem from the perspective of first impressions and retaining new customers.
+In order of priority, here is my distribution:
+
+  Each of these sorted by delivery time, soonest to latest, considering the item may become available.
+  1. Customers placing an order for the first time
+  2. Customers who have ordered this item before, sorted by total cart size from smallest to largest ( do have
+     an expectation of this item being available, and it making up a larger % of their total inventory the
+     smaller their total cart size )
+  3. Customers who have never ordered this item
