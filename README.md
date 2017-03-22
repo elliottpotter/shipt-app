@@ -69,3 +69,10 @@ If you'd rather receive this information in a .csv format, simply PUT to /produc
 * api_key
 * start_date
 * end_date
+
+
+*With more time I would...*
+- Reformat some of the JSON responses to present only information relevant to each action
+- Implement data validation in each of the models (valid email on customers, unique emails for each, etc.)
+- Rename some of the routes to reflect actions taken
+- Refine the raw SQL query to be a valid ActiveRecord Query
