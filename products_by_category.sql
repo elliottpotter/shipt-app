@@ -1,9 +1,9 @@
 select
-customers.id,
-customers.first_name,
-categories.id,
-categories.name,
-sum(order_products.quantity)
+customers.id 'customer_id',
+customers.first_name 'customer_first_name',
+categories.id 'category_id',
+categories.name 'category_name',
+sum(order_products.quantity) 'number_purchased'
 
 from customers
 join orders                   on orders.customer_id = customers.id
